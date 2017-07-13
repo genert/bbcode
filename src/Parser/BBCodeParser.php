@@ -6,7 +6,7 @@
  * Time: 13:20
  */
 
-namespace Genert\BBCode;
+namespace Genert\BBCode\Parser;
 
 final class BBCodeParser extends Parser {
     protected $parsers = [

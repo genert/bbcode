@@ -6,7 +6,7 @@
  * Time: 12:16
  */
 
-namespace Genert\BBCode;
+namespace Genert\BBCode\Parser;
 
 class Parser {
     const CASE_INSENSITIVE = 0;

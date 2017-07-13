@@ -8,6 +8,9 @@
 
 namespace Genert\BBCode;
 
+use Genert\BBCode\Parser\BBCodeParser;
+use Genert\BBCode\Parser\HTMLParser;
+
 final class BBCode {
     private $htmlParser;
     private $bbcodeParser;
