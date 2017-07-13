@@ -95,6 +95,21 @@ final class BBCodeParser extends Parser {
             'replace' => '<small>$1</small>',
             'content' => '$1'
         ],
+        'table' => [
+            'pattern' => '/\[table\](.*?)\[\/table\]/s',
+            'replace' => '<table>$1</table>',
+            'content' => '$1',
+        ],
+        'table-row' => [
+            'pattern' => '/\[tr\](.*?)\[\/tr\]/s',
+            'replace' => '<tr>$1</tr>',
+            'content' => '$1',
+        ],
+        'table-data' => [
+            'pattern' => '/\[td\](.*?)\[\/td\]/s',
+            'replace' => '<td>$1</td>',
+            'content' => '$1',
+        ],
     ];
 
     public function stripTags(string $source): string

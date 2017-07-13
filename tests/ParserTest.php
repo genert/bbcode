@@ -40,6 +40,16 @@ class ParserTest extends TestCase {
                 <li>Item 2</li>
                 <li>Item 3</li>
             </ul>
+            <table>
+              <tr>
+                <td>table 1</td>
+                <td>table 2</td>
+              </tr>
+              <tr>
+                <td>table 3</td>
+                <td>table 4</td>
+              </tr>
+            </table>
         ';
 
         $output = '
@@ -64,6 +74,16 @@ class ParserTest extends TestCase {
                 [*]Item 2
                 [*]Item 3
             [/list]
+            [table]
+              [tr]
+                [td]table 1[/td]
+                [td]table 2[/td]
+              [/tr]
+              [tr]
+                [td]table 3[/td]
+                [td]table 4[/td]
+              [/tr]
+            [/table]
         ';
 
         $this->assertEquals($output, $bbCode->convertFromHtml($input));

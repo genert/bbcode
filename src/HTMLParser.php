@@ -55,7 +55,7 @@ final class HTMLParser extends Parser {
             'replace' => '[url=$1]$2[/url]',
             'content' => '$1'
         ],
-        'namedquote' => [
+        'quote' => [
             'pattern' => '/<blockquote>(.*?)<\/blockquote>/s',
             'replace' => '[quote]$1[/quote]',
             'content' => '$1'
@@ -86,8 +86,23 @@ final class HTMLParser extends Parser {
             'content' => '$1'
         ],
         'small' => [
-            'pattern' => '/<small>(.*?)<\/small>/',
+            'pattern' => '/<small>(.*?)<\/small>/s',
             'replace' => '[small]$1[/small]',
+            'content' => '$1',
+        ],
+        'table' => [
+            'pattern' => '/<table>(.*?)<\/table>/s',
+            'replace' => '[table]$1[/table]',
+            'content' => '$1',
+        ],
+        'table-row' => [
+            'pattern' => '/<tr>(.*?)<\/tr>/s',
+            'replace' => '[tr]$1[/tr]',
+            'content' => '$1',
+        ],
+        'table-data' => [
+            'pattern' => '/<td>(.*?)<\/td>/s',
+            'replace' => '[td]$1[/td]',
             'content' => '$1',
         ],
     ];
