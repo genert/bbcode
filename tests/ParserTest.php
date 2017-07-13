@@ -122,4 +122,8 @@ class ParserTest extends TestCase {
 
         $this->assertEquals($output, $bbCode->convertToHtml($input));
     }
+
+    public function testStripBBCodeTags() {
+
+    }
 }
