@@ -120,8 +120,6 @@ class ParserTest extends TestCase {
             </ul>
         ';
 
-        error_log($bbCode->convertToHtml($input));
-
-        $this->assertTrue(true);
+        $this->assertEquals($output, $bbCode->convertToHtml($input));
     }
 }
