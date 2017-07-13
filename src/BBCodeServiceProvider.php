@@ -2,7 +2,6 @@
 
 namespace Genert\BBCode;
 
-use Genert\BBCode\BBCode;
 use Illuminate\Support\ServiceProvider;
 
 final class BBCodeServiceProvider extends ServiceProvider {
@@ -18,7 +17,8 @@ final class BBCodeServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
         $this->app->bind('bbcode', function () {
             return new BBCode();
         });
@@ -29,7 +29,8 @@ final class BBCodeServiceProvider extends ServiceProvider {
      *
      * @return array
      */
-    public function provides() {
+    public function provides()
+    {
         return ['bbcode'];
     }
 }

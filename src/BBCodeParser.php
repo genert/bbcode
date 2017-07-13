@@ -97,7 +97,8 @@ final class BBCodeParser extends Parser {
         ],
     ];
 
-    public function stripTags(string $source): string {
+    public function stripTags(string $source): string
+    {
         foreach ($this->parsers as $name => $parser) {
             $source = $this->searchAndReplace($parser['pattern'] . 'i', $parser['content'], $source);
         }
@@ -105,7 +106,8 @@ final class BBCodeParser extends Parser {
         return $source;
     }
 
-    public function parse(string $source, $caseInsensitive = null): string {
+    public function parse(string $source, $caseInsensitive = null): string
+    {
         $caseInsensitive = $caseInsensitive === self::CASE_INSENSITIVE ? true : false;
 
         foreach ($this->parsers as $name => $parser) {

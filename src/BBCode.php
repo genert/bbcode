@@ -14,20 +14,29 @@ final class BBCode {
 
     const CASE_SENSITIVE = 0;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->htmlParser = new HTMLParser();
         $this->bbcodeParser = new BBCodeParser();
     }
 
-    public function only($only = null) {
+    public function only($only = null)
+    {
         return $this;
     }
 
-    public function convertFromHtml(string $source): string {
+    public function stripBBCodeTags(string $source): string
+    {
+        return $this->bbcodeParser->stripTags($source);
+    }
+
+    public function convertFromHtml(string $source): string
+    {
         return $this->htmlParser->parse($source);
     }
 
-    public function convertToHtml(string $source, $style = null): string {
+    public function convertToHtml(string $source, $style = null): string
+    {
         return $this->bbcodeParser->parse($source, $style);
     }
 }
