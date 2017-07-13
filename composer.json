@@ -1,0 +1,24 @@
+{
+    "name": "genertorg/bbcode",
+    "description": "BBCode parser",
+    "keywords": ["bbcode", "parser", "laravel", "psr-1", "psr-2", "psr-4"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Genert Org",
+            "email": "hi@genert.org",
+            "homepage": "http://genert.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Genert\\BBCode\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.1"
+    }
+}
