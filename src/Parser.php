@@ -48,4 +48,9 @@ class Parser {
 
         return $this;
     }
+
+    public function getParsers(): array
+    {
+        return $this->parsers;
+    }
 }

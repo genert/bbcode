@@ -126,8 +126,8 @@ class ParserTest extends TestCase {
     public function testCaseSensitivity()
     {
         $bbCode = new BBCode();
-        $input = $bbCode->convertToHtml('[B][I][U]More tags === More COOL![/U][/I][/B]', BBCode::CASE_SENSITIVE);
-        $output = '<strong><i><u>More tags === More COOL!</u></i></strong>';
+        $input = $bbCode->convertToHtml('[B][I][U]Random text[/u][/I][/b]', BBCode::CASE_SENSITIVE);
+        $output = '<strong><i><u>Random text</u></i></strong>';
 
         $this->assertEquals(
             $input,
@@ -148,5 +148,16 @@ class ParserTest extends TestCase {
             $bbCode->stripBBCodeTags('Lo[b]rem[/b] dol[url=http://yolo.com]o[/url]r sit a[s]me[/s]t!'),
             'Lorem dolor sit amet!'
         );
+    }
+
+    public function testOnlyFunctionality()
+    {
+        $bbCode = new BBCode();
+
+        $this->assertEquals(
+            $bbCode->only('bold')->convertToHtml('[b]Bold[/b] [i]italic[/i]'),
+            '<strong>Bold</strong> [i]italic[/i]'
+        );
+
     }
 }

@@ -22,6 +22,17 @@ final class BBCode {
 
     public function only($only = null)
     {
+        $this->htmlParser->only($only);
+        $this->bbcodeParser->only($only);
+
+        return $this;
+    }
+
+    public function except($except = null)
+    {
+        $this->htmlParser->except($except);
+        $this->bbcodeParser->except($except);
+
         return $this;
     }
 
