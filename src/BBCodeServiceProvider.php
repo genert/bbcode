@@ -1,6 +1,6 @@
 <?php
 
-namespace Weps\Providers;
+namespace Genert\BBCode;
 
 use Genert\BBCode\BBCode;
 use Illuminate\Support\ServiceProvider;
