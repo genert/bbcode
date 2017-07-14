@@ -19,8 +19,8 @@ $ composer require genert/bbcode
 ## Usage
 The `genert/bbcode` library comes with functionality to convert BBCode to HTML or vice versa.
 
-### `convertFromHtml(string $source)`
-Converts BBCode to HTML and returns as string.
+### `convertFromHtml(string $text)`
+Converts BBCode to HTML and returns output as string.
 
 Example:
 ```php
@@ -28,9 +28,43 @@ use Genert\BBCode\BBCode;
 
 $bbCode = new BBCode();
 
-
 // Output: '<strong>Hello word!</strong>'
 $bbCode->convertFromHtml('[b]Hello word![/b]');
+```
+
+### `convertToHtml(string $text, [$caseSensitive])`
+Converts HTML to BBCode and returns output as string.
+
+Example:
+```php
+use Genert\BBCode\BBCode;
+
+$bbCode = new BBCode();
+
+// Output: '[b]Hello word![/b]'
+$bbCode->convertToHtml('<strong>Hello word!</strong>');
+```
+
+This function also supports case sensitive BBCode parsing by optional parameter.
+
+To enable this, simply pass `BBCode::CASE_SENSITIVE` as second argument:
+```php
+// Output: '<strong><i><u>Ran<strong>d</strong>om text</u></i></strong>'
+$bbCode->convertToHtml('[B][I][U]Ran[b]d[/b]om text[/u][/I][/b]', BBCode::CASE_SENSITIVE);
+```
+
+
+### `stripBBCodeTags(string $text)`
+Strips BBCode tags from text and returns output as string.
+
+Example:
+```php
+use Genert\BBCode\BBCode;
+
+$bbCode = new BBCode();
+
+// Output: 'Hello word!'
+$bbCode->stripBBCodeTags('[b]Hello word![/b]');
 ```
 
 ## Laravel installation

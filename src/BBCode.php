@@ -39,18 +39,18 @@ final class BBCode {
         return $this;
     }
 
-    public function stripBBCodeTags(string $source): string
+    public function stripBBCodeTags(string $text): string
     {
-        return $this->bbCodeParser->stripTags($source);
+        return $this->bbCodeParser->stripTags($text);
     }
 
-    public function convertFromHtml(string $source): string
+    public function convertFromHtml(string $text): string
     {
-        return $this->htmlParser->parse($source);
+        return $this->htmlParser->parse($text);
     }
 
-    public function convertToHtml(string $source, $style = null): string
+    public function convertToHtml(string $text, $caseSensitive = null): string
     {
-        return $this->bbCodeParser->parse($source, $style);
+        return $this->bbCodeParser->parse($text, $caseSensitive);
     }
 }
