@@ -111,8 +111,7 @@ You can register facades in the `aliases` key of your `config/app.php` file if y
 With registered facade, you can use library's functionality as following:
 ```php
 // Output: '<strong>Laravel wins</strong>'
-echo BBCode::convertToHtml('[b]Laravel wins[/b]);
-
+echo BBCode::convertToHtml('[b]Laravel wins[/b]');
 
 // Output: '[b]Do Symphony or not[/b]'
 echo BBCode::convertFromHtml('<strong>Do Symphony or not</strong>');
