@@ -53,7 +53,6 @@ To enable this, simply pass `BBCode::CASE_SENSITIVE` as second argument:
 $bbCode->convertToHtml('[B][I][U]Ran[b]d[/b]om text[/u][/I][/b]', BBCode::CASE_SENSITIVE);
 ```
 
-
 ### `stripBBCodeTags(string $text)`
 Strips BBCode tags from text and returns output as string.
 
@@ -65,6 +64,38 @@ $bbCode = new BBCode();
 
 // Output: 'Hello word!'
 $bbCode->stripBBCodeTags('[b]Hello word![/b]');
+```
+
+### `only(array list or ...args)`
+Sets parser to only convert set BBCode tags.
+
+Example:
+```php
+use Genert\BBCode\BBCode;
+
+$bbCode = new BBCode();
+
+// Output: '<strong>Bold</strong> [i]italic[/i]'
+$bbCode->only('bold')->convertToHtml('[b]Bold[/b] [i]italic[/i]');
+
+// Or as array
+$bbCode->only(['bold'])->convertToHtml('[b]Bold[/b] [i]italic[/i]');
+```
+
+### `except(array list or ...args)`
+Sets parser to only convert all BBCode tags except listed.
+
+Example:
+```php
+use Genert\BBCode\BBCode;
+
+$bbCode = new BBCode();
+
+// Output: '[b]Bold[/b] <i>italic</i>'
+$bbCode->except('bold')->convertToHtml('[b]Bold[/b] [i]italic[/i]');
+
+// Or as array
+$bbCode->except(['bold'])->convertToHtml('[b]Bold[/b] [i]italic[/i]');
 ```
 
 ## Laravel installation

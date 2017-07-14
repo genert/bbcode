@@ -180,4 +180,14 @@ class ParserTest extends TestCase {
         );
 
     }
+
+    public function testExceptFunctionality()
+    {
+        $bbCode = new BBCode();
+
+        $this->assertEquals(
+            $bbCode->except('bold')->convertToHtml('[b]Bold[/b] [i]italic[/i]'),
+            '[b]Bold[/b] <i>italic</i>'
+        );
+    }
 }
