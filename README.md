@@ -17,10 +17,9 @@ $ composer require genert/bbcode
 ```
 
 ## Usage
-The `genert/bbcode` library comes with functionality to convert BBCode to HTML or vice versa.
 
 ### `convertFromHtml(string $text)`
-Converts BBCode to HTML and returns output as string.
+Convert BBCode to HTML and returns parsed text as string.
 
 Example:
 ```php
@@ -33,7 +32,7 @@ $bbCode->convertFromHtml('[b]Hello word![/b]');
 ```
 
 ### `convertToHtml(string $text, [$caseSensitive])`
-Converts HTML to BBCode and returns output as string.
+Convert HTML to BBCode and returns parsed text as string.
 
 Example:
 ```php
