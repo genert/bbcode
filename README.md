@@ -132,6 +132,6 @@ Contributions are welcome. Please clearly explain the purpose of the PR and foll
 Issues can be resolved quickest if they are descriptive and include both a reduced test case and a set of steps to reproduce.
 
 ## Licence
-The `genert/bbcode` library is copyright © [Genert Org](http://genert.org)and licensed for use under the MIT License (MIT).
+The `genert/bbcode` library is copyright © [Genert Org](http://genert.org) and licensed for use under the MIT License (MIT).
 
 Please see [MIT License](LICENSE) for more information.
