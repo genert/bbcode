@@ -16,6 +16,25 @@ To get the latest version of BBCode, simply require the project using [Composer]
 $ composer require genert/bbcode
 ```
 
+## Usage
+The `genert/bbcode` library comes with functionality to convert BBCode to HTML or vice versa.
+
+### `convertFromHtml(string $source)`
+Converts BBCode to HTML and returns as string.
+
+Example:
+```php
+use Genert\BBCode\BBCode;
+
+$bbCode = new BBCode();
+
+
+// Output: '<strong>Hello word!</strong>'
+$bbCode->convertFromHtml('[b]Hello word![/b]');
+```
+
+## Laravel installation
+
 Once BBCode is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
 * `\Genert\BBCode\BBCodeServiceProvider::class,`
@@ -23,6 +42,25 @@ Once BBCode is installed, you need to register the service provider. Open up `co
 You can register facades in the `aliases` key of your `config/app.php` file if you like.
 
 * `'BBCode' => \Genert\BBCode\Facades\BBCode::class,`
+
+With registered facade, you can use library's functionality as following:
+```php
+// Output: '<strong>Laravel wins</strong>'
+echo BBCode::convertToHtml('[b]Laravel wins[/b]);
+
+
+// Output: '[b]Do Symphony or not[/b]'
+echo BBCode::convertFromHtml('<strong>Do Symphony or not</strong>');
+
+// Output: '<strong>What does<strong> [i]fox say[/i]'
+echo BBCode::only('bold')->convertToHtml('[b]What does[/b] [i]fox say[/i]');
+```
+
+## Testing
+To run tests, simply run following command in terminal:
+```bash
+composer test
+```
 
 ## Contributions & Issues
 Contributions are welcome. Please clearly explain the purpose of the PR and follow the current style.
