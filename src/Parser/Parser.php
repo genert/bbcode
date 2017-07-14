@@ -17,22 +17,13 @@ class Parser {
 
     protected $parsers = [];
 
-    public function searchAndReplace(string $pattern, string $replace, string $source): string
+    protected function searchAndReplace(string $pattern, string $replace, string $source): string
     {
         while (preg_match($pattern, $source)) {
             $source = preg_replace($pattern, $replace, $source);
         }
 
         return $source;
-    }
-
-    public function addParser(string $name, string $pattern, string $replace, string $content)
-    {
-        $this->parsers[$name] = [
-            'pattern' => $pattern,
-            'replace' => $replace,
-            'content' => $content
-        ];
     }
 
     public function only($only = null)
