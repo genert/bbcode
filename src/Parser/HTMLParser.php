@@ -11,12 +11,12 @@ namespace Genert\BBCode\Parser;
 final class HTMLParser extends Parser {
     protected $parsers = [
         'bold' => [
-            'pattern' => '/<strong>(.*?)<\/strong>/s',
+            'pattern' => '/<strong>(.*?)<\/strong>|<b>(.*?)<\/b>/s',
             'replace' => '[b]$1[/b]',
             'content' => '$1',
         ],
         'italic' => [
-            'pattern' => '/<i>(.*?)<\/i>/s',
+            'pattern' => '/<i>(.*?)<\/i>|<em>(.*?)<\/em>/s',
             'replace' => '[i]$1[/i]',
             'content' => '$1'
         ],
@@ -26,7 +26,7 @@ final class HTMLParser extends Parser {
             'content' => '$1',
         ],
         'linethrough' => [
-            'pattern' => '/<strike>(.*?)<\/strike>/',
+            'pattern' => '/<s>(.*?)<\/s>|<del>(.*?)<\/del>/s',
             'replace' => '[s]$1[/s]',
             'content' => '$1',
         ],

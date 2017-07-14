@@ -9,6 +9,10 @@
 namespace Genert\BBCode\Parser;
 
 class Parser {
+    /**
+     * Static case insensitive flag to enable
+     * case insensitivity when parsing BBCode.
+     */
     const CASE_INSENSITIVE = 0;
 
     protected $parsers = [];
@@ -22,7 +26,7 @@ class Parser {
         return $source;
     }
 
-    public function addParser(string $name, string $pattern, string $replace, string $content, $type = null)
+    public function addParser(string $name, string $pattern, string $replace, string $content)
     {
         $this->parsers[$name] = [
             'pattern' => $pattern,

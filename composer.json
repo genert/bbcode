@@ -1,6 +1,6 @@
 {
     "name": "genertorg/bbcode",
-    "description": "BBCode parser",
+    "description": "BBCode parser from or to HTML.",
     "keywords": ["bbcode", "parser", "laravel", "psr-1", "psr-2", "psr-4"],
     "type": "library",
     "license": "MIT",
@@ -16,9 +16,15 @@
             "Genert\\BBCode\\": "src/"
         }
     },
+    "support": {
+        "issues": "https://github.com/Genert/BBCode/issues"
+    },
     "minimum-stability": "stable",
     "require": {},
     "require-dev": {
         "phpunit/phpunit": "^6.1"
+    },
+    "scripts": {
+        "test": "phpunit --coverage-text"
     }
 }

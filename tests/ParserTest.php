@@ -22,7 +22,7 @@ class ParserTest extends TestCase {
             <strong>bold</strong>
             <i>italic</i>
             <u>underline</u>
-            <strike>line through</strike>
+            <s>line through</s>
             <blockquote>quote</blockquote>
             <blockquote><small>golonka</small>quote</blockquote>
             <a href="http://www.example.com">http://www.example.com</a>
@@ -120,7 +120,7 @@ class ParserTest extends TestCase {
             <strong>bold</strong>
             <i>italic</i>
             <u>underline</u>
-            <strike>line through</strike>
+            <s>line through</s>
             <blockquote>quote</blockquote>
             <blockquote><small>golonka</small>quote</blockquote>
             <a href="http://www.example.com">http://www.example.com</a>
@@ -146,8 +146,8 @@ class ParserTest extends TestCase {
     public function testCaseSensitivity()
     {
         $bbCode = new BBCode();
-        $input = $bbCode->convertToHtml('[B][I][U]Random text[/u][/I][/b]', BBCode::CASE_SENSITIVE);
-        $output = '<strong><i><u>Random text</u></i></strong>';
+        $input = $bbCode->convertToHtml('[B][I][U]Ran[b]d[/b]om text[/u][/I][/b]', BBCode::CASE_SENSITIVE);
+        $output = '<strong><i><u>Ran<strong>d</strong>om text</u></i></strong>';
 
         $this->assertEquals(
             $input,

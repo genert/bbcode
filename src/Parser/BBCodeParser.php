@@ -27,7 +27,7 @@ final class BBCodeParser extends Parser {
         ],
         'linethrough' => [
             'pattern' => '/\[s\](.*?)\[\/s\]/s',
-            'replace' => '<strike>$1</strike>',
+            'replace' => '<s>$1</s>',
             'content' => '$1'
         ],
         'quote' => [

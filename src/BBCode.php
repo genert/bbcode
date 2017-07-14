@@ -13,20 +13,20 @@ use Genert\BBCode\Parser\HTMLParser;
 
 final class BBCode {
     private $htmlParser;
-    private $bbcodeParser;
+    private $bbCodeParser;
 
     const CASE_SENSITIVE = 0;
 
     public function __construct()
     {
         $this->htmlParser = new HTMLParser();
-        $this->bbcodeParser = new BBCodeParser();
+        $this->bbCodeParser = new BBCodeParser();
     }
 
     public function only($only = null)
     {
         $this->htmlParser->only($only);
-        $this->bbcodeParser->only($only);
+        $this->bbCodeParser->only($only);
 
         return $this;
     }
@@ -34,14 +34,14 @@ final class BBCode {
     public function except($except = null)
     {
         $this->htmlParser->except($except);
-        $this->bbcodeParser->except($except);
+        $this->bbCodeParser->except($except);
 
         return $this;
     }
 
     public function stripBBCodeTags(string $source): string
     {
-        return $this->bbcodeParser->stripTags($source);
+        return $this->bbCodeParser->stripTags($source);
     }
 
     public function convertFromHtml(string $source): string
@@ -51,6 +51,6 @@ final class BBCode {
 
     public function convertToHtml(string $source, $style = null): string
     {
-        return $this->bbcodeParser->parse($source, $style);
+        return $this->bbCodeParser->parse($source, $style);
     }
 }
