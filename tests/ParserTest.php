@@ -16,6 +16,23 @@ class ParserTest extends TestCase {
         $this->assertNotNull($bbCode);
     }
 
+    public function testBBCodeParsing()
+    {
+        $bbCode = new BBCode();
+        $tests = [
+            ['input' => '[b]Yolo[/b]', 'excepted' => '<b>Yolo</b>'],
+            ['input' => '[i]Yolo[/i]', 'excepted' => '<i>Yolo</i>'],
+            ['input' => '[u]Yolo[/u]', 'excepted' => '<u>Yolo</u>'],
+            ['input' => '[s]Yolo[/s]', 'excepted' => '<s>Yolo</s>'],
+            ['input' => '[code]Yolo[/code]', 'excepted' => '<code>Yolo</code>'],
+            ['input' => '[list]Yolo[/list]', 'excepted' => '<ul>Yolo</ul>'],
+        ];
+
+        foreach ($tests as $test) {
+            $this->assertEquals($test['excepted'], $bbCode->convertToHtml($test['input']));
+        }
+    }
+
     public function testHtmlReturnsCorrectBBCode() {
         $bbCode = new BBCode();
         $input = '
@@ -117,7 +134,7 @@ class ParserTest extends TestCase {
         ';
 
         $output = '
-            <strong>bold</strong>
+            <b>bold</b>
             <i>italic</i>
             <u>underline</u>
             <s>line through</s>
@@ -147,7 +164,7 @@ class ParserTest extends TestCase {
     {
         $bbCode = new BBCode();
         $input = $bbCode->convertToHtml('[B][I][U]Ran[b]d[/b]om text[/u][/I][/b]', BBCode::CASE_SENSITIVE);
-        $output = '<strong><i><u>Ran<strong>d</strong>om text</u></i></strong>';
+        $output = '<b><i><u>Ran<b>d</b>om text</u></i></b>';
 
         $this->assertEquals(
             $input,
@@ -176,7 +193,7 @@ class ParserTest extends TestCase {
 
         $this->assertEquals(
             $bbCode->only('bold')->convertToHtml('[b]Bold[/b] [i]italic[/i]'),
-            '<strong>Bold</strong> [i]italic[/i]'
+            '<b>Bold</b> [i]italic[/i]'
         );
 
     }
@@ -188,6 +205,22 @@ class ParserTest extends TestCase {
         $this->assertEquals(
             $bbCode->except('bold')->convertToHtml('[b]Bold[/b] [i]italic[/i]'),
             '[b]Bold[/b] <i>italic</i>'
+        );
+    }
+
+    public function testAddParser()
+    {
+        $bbCode = new BBCode();
+
+        $bbCode->addParser(
+            'custom-link',
+            '/\[link target\=(.*?)\](.*?)\[\/link\]/s',
+            '<a href="$1">$2</a>'
+        );
+
+        $this->assertEquals(
+            $bbCode->convertToHtml('[link target=www.yourlinkhere.com]Text to be displayed[/link].'),
+            '<a href="www.yourlinkhere.com">Text to be displayed</a>.'
         );
     }
 }

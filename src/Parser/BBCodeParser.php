@@ -12,7 +12,7 @@ final class BBCodeParser extends Parser {
     protected $parsers = [
         'bold' => [
             'pattern' => '/\[b\](.*?)\[\/b\]/s',
-            'replace' => '<strong>$1</strong>',
+            'replace' => '<b>$1</b>',
             'content' => '$1'
         ],
         'italic' => [

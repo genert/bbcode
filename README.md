@@ -98,6 +98,27 @@ $bbCode->except('bold')->convertToHtml('[b]Bold[/b] [i]italic[/i]');
 $bbCode->except(['bold'])->convertToHtml('[b]Bold[/b] [i]italic[/i]');
 ```
 
+### `addParser(string $name, string $pattern, string $replace)`
+Add regex based BBCode parser to translate found pattern to desired one.
+
+Example:
+```php
+use Genert\BBCode\BBCode;
+
+$bbCode = new BBCode();
+
+// Add "[link target=http://example.com]Example[/link]" parser.
+$bbCode->addParser(
+    'custom-link',
+    '/\[link target\=(.*?)\](.*?)\[\/link\]/s',
+    '<a href="$1">$2</a>'
+);
+
+// Output: '<a href="www.yourlinkhere.com">Text to be displayed</a>.'
+$bbCode->convertToHtml('[link target=www.yourlinkhere.com]Text to be displayed[/link].');
+```
+
+
 ## Laravel installation
 
 Once BBCode is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
