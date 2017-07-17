@@ -223,4 +223,14 @@ class ParserTest extends TestCase {
             '<a href="www.yourlinkhere.com">Text to be displayed</a>.'
         );
     }
+
+    public function testEdgeCases()
+    {
+        $bbCode = new BBCode();
+
+        $this->assertEquals(
+            $bbCode->convertFromHtml('This<strong> </strong><a href="http://genert.org"><strong>is</strong> <i>&lt;b&gt;test&lt;/b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong</i>&gt;&lt;<u>/stro</u>ng&gt;</a>'),
+            'This[b] [/b][url=http://genert.org][b]is[/b] [i]&lt;b&gt;test&lt;/b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong[/i]&gt;&lt;[u]/stro[/u]ng&gt;[/url]'
+        );
+    }
 }
