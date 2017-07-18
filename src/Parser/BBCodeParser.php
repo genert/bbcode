@@ -110,6 +110,11 @@ final class BBCodeParser extends Parser {
             'replace' => '<td>$1</td>',
             'content' => '$1',
         ],
+        'linebreak' => [
+            'pattern' => '/\r\n/',
+            'replace' => '<br />',
+            'content' => '',
+        ],
     ];
 
     public function stripTags(string $source): string
