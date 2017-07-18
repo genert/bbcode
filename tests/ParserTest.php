@@ -26,6 +26,10 @@ class ParserTest extends TestCase {
             ['input' => '[s]Yolo[/s]', 'excepted' => '<s>Yolo</s>'],
             ['input' => '[code]Yolo[/code]', 'excepted' => '<code>Yolo</code>'],
             ['input' => '[list]Yolo[/list]', 'excepted' => '<ul>Yolo</ul>'],
+            ['input' => '[img]Yolo[/img]', 'excepted' => '<img src="Yolo">'],
+            ['input' => '[table]Yolo[/table]', 'excepted' => '<table>Yolo</table>'],
+            ['input' => '[tr]Yolo[/tr]', 'excepted' => '<tr>Yolo</tr>'],
+            ['input' => '[td]Yolo[/td]', 'excepted' => '<td>Yolo</td>'],
         ];
 
         foreach ($tests as $test) {
@@ -41,7 +45,6 @@ class ParserTest extends TestCase {
             <u>underline</u>
             <s>line through</s>
             <blockquote>quote</blockquote>
-            <blockquote><small>golonka</small>quote</blockquote>
             <a href="http://www.example.com">http://www.example.com</a>
             <a href="http://www.example.com">example.com</a>
             <img src="http://example.com/logo.png">
@@ -75,7 +78,6 @@ class ParserTest extends TestCase {
             [u]underline[/u]
             [s]line through[/s]
             [quote]quote[/quote]
-            [quote][small]golonka[/small]quote[/quote]
             [url=http://www.example.com]http://www.example.com[/url]
             [url=http://www.example.com]example.com[/url]
             [img]http://example.com/logo.png[/img]
@@ -115,7 +117,6 @@ class ParserTest extends TestCase {
             [u]underline[/u]
             [s]line through[/s]
             [quote]quote[/quote]
-            [quote][small]golonka[/small]quote[/quote]
             [url=http://www.example.com]http://www.example.com[/url]
             [url=http://www.example.com]example.com[/url]
             [img]http://example.com/logo.png[/img]
@@ -139,7 +140,6 @@ class ParserTest extends TestCase {
             <u>underline</u>
             <s>line through</s>
             <blockquote>quote</blockquote>
-            <blockquote><small>golonka</small>quote</blockquote>
             <a href="http://www.example.com">http://www.example.com</a>
             <a href="http://www.example.com">example.com</a>
             <img src="http://example.com/logo.png">
@@ -220,8 +220,8 @@ class ParserTest extends TestCase {
         );
 
         $this->assertEquals(
-            $bbCode->convertToHtml('[link target=www.yourlinkhere.com]Text to be displayed[/link].'),
-            '<a href="www.yourlinkhere.com">Text to be displayed</a>.'
+            $bbCode->convertToHtml('[link target=http://www.example.com]Text to be displayed[/link].'),
+            '<a href="http://www.example.com">Text to be displayed</a>.'
         );
     }
 
