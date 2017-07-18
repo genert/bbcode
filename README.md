@@ -98,7 +98,7 @@ $bbCode->except('bold')->convertToHtml('[b]Bold[/b] [i]italic[/i]');
 $bbCode->except(['bold'])->convertToHtml('[b]Bold[/b] [i]italic[/i]');
 ```
 
-### `addParser(string $name, string $pattern, string $replace)`
+### `addParser(string $name, string $pattern, string $replace, string $content)`
 Add regex based BBCode parser to translate found pattern to desired one.
 
 Example:
@@ -111,7 +111,8 @@ $bbCode = new BBCode();
 $bbCode->addParser(
     'custom-link',
     '/\[link target\=(.*?)\](.*?)\[\/link\]/s',
-    '<a href="$1">$2</a>'
+    '<a href="$1">$2</a>',
+    '$1'
 );
 
 // Output: '<a href="www.yourlinkhere.com">Text to be displayed</a>.'

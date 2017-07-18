@@ -44,11 +44,12 @@ class Parser {
         return $this;
     }
 
-    public function addParser(string $name, string $pattern, string $replace)
+    public function addParser(string $name, string $pattern, string $replace, string $content)
     {
         $this->parsers[$name] = [
             'pattern' => $pattern,
             'replace' => $replace,
+            'content' => $content,
         ];
     }
 }

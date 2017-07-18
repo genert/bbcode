@@ -54,8 +54,10 @@ final class BBCode {
         return $this->bbCodeParser->parse($text, $caseSensitive);
     }
 
-    public function addParser(string $name, string $pattern, string $replace)
+    public function addParser(string $name, string $pattern, string $replace, string $content)
     {
-        $this->bbCodeParser->addParser($name, $pattern, $replace);
+        $this->bbCodeParser->addParser($name, $pattern, $replace, $content);
+
+        return $this;
     }
 }

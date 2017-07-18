@@ -215,7 +215,8 @@ class ParserTest extends TestCase {
         $bbCode->addParser(
             'custom-link',
             '/\[link target\=(.*?)\](.*?)\[\/link\]/s',
-            '<a href="$1">$2</a>'
+            '<a href="$1">$2</a>',
+            '$2'
         );
 
         $this->assertEquals(
