@@ -14,7 +14,7 @@ BBCode
 To get the latest version of BBCode, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require genertorg/bbcode
+$ composer require genert/bbcode
 ```
 
 ## Usage

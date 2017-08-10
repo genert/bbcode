@@ -1,5 +1,5 @@
 {
-    "name": "genertorg/bbcode",
+    "name": "genert/bbcode",
     "description": "BBCode parser from or to HTML.",
     "keywords": ["bbcode", "parser", "laravel", "psr-1", "psr-2", "psr-4"],
     "type": "library",
