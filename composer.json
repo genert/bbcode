@@ -17,7 +17,7 @@
         }
     },
     "support": {
-        "issues": "https://github.com/Genert/BBCode/issues"
+        "issues": "https://github.com/Genert/bbcode/issues"
     },
     "minimum-stability": "stable",
     "require": {},
