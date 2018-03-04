@@ -204,7 +204,7 @@ class ParserTest extends TestCase
     {
         $bbCode = new BBCode();
 
-        $bbCode->addNewlineParser();
+        $bbCode->addLinebreakParser();
 
         $input = '[b]bold[/b]
             [i]italic[/i]
