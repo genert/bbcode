@@ -29,7 +29,7 @@ use Genert\BBCode\BBCode;
 $bbCode = new BBCode();
 
 // Output: '[b]Hello word![/b]'
-$bbCode->convertToHtml('<strong>Hello word!</strong>');
+$bbCode->convertFromHtml('<strong>Hello word!</strong>');
 ```
 
 ### `convertToHtml(string $text, [$caseSensitive])`
@@ -42,7 +42,7 @@ use Genert\BBCode\BBCode;
 $bbCode = new BBCode();
 
 // Output: '<strong>Hello word!</strong>'
-$bbCode->convertFromHtml('[b]Hello word![/b]');
+$bbCode->convertToHtml('[b]Hello word![/b]');
 ```
 
 This function also supports case sensitive BBCode parsing by optional parameter.
