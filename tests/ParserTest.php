@@ -9,8 +9,10 @@
 use PHPUnit\Framework\TestCase;
 use Genert\BBCode\BBCode;
 
-class ParserTest extends TestCase {
-    public function testParser() {
+class ParserTest extends TestCase
+{
+    public function testParser()
+    {
         $bbCode = new BBCode();
 
         $this->assertNotNull($bbCode);
@@ -156,6 +158,60 @@ class ParserTest extends TestCase {
                 <li>Item 3</li>
             </ul>
         ';
+
+        $this->assertEquals($output, $bbCode->convertToHtml($input));
+    }
+
+    // https://github.com/Genert/bbcode/issues/2
+    public function testCustomBulletsListBBCodeConversion()
+    {
+        $bbCode = new BBCode();
+
+        $input = '
+            [ul]
+                [li]List item 1[/li]
+                [li]List item 2[/li]
+                [li]List item 3[/li]
+            [/ul]
+        ';
+
+        $bbCode->addParser(
+            'bullet_list',
+            '/\[ul\](.*?)\[\/ul\]/s',
+            '<ul>$1</ul>',
+            '$1'
+        );
+
+        $bbCode->addParser(
+            'list_item',
+            '/\[li\](.*?)\[\/li\]/',
+            '<li>$1</li>',
+            '$1'
+        );
+
+        $output = '
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+            </ul>
+        ';
+
+        $this->assertEquals($output, $bbCode->convertToHtml($input));
+    }
+
+    public function testAddNewLineBBCodeConversion()
+    {
+        $bbCode = new BBCode();
+
+        $bbCode->addNewlineParser();
+
+        $input = '[b]bold[/b]
+            [i]italic[/i]
+            [u]underline[/u]
+            [s]line through[/s]';
+
+        $output = trim('<b>bold</b><br />            <i>italic</i><br />            <u>underline</u><br />            <s>line through</s>');
 
         $this->assertEquals($output, $bbCode->convertToHtml($input));
     }

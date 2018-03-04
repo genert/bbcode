@@ -11,7 +11,8 @@ namespace Genert\BBCode;
 use Genert\BBCode\Parser\BBCodeParser;
 use Genert\BBCode\Parser\HTMLParser;
 
-final class BBCode {
+final class BBCode
+{
     private $htmlParser;
     private $bbCodeParser;
 
@@ -59,5 +60,10 @@ final class BBCode {
         $this->bbCodeParser->addParser($name, $pattern, $replace, $content);
 
         return $this;
+    }
+
+    public function addLinebreakParser()
+    {
+        return $this->addParser('linebreak', '/[\r\n]/', '<br />', '');
     }
 }

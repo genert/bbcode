@@ -119,6 +119,9 @@ $bbCode->addParser(
 $bbCode->convertToHtml('[link target=www.yourlinkhere.com]Text to be displayed[/link].');
 ```
 
+### `addLinebreakParser()`
+
+Adds linebreak parser to BBCode parsers list to convert newlines to `<br />` in HTML.
 
 ## Laravel installation
 

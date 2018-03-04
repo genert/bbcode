@@ -8,7 +8,8 @@
 
 namespace Genert\BBCode\Parser;
 
-final class BBCodeParser extends Parser {
+final class BBCodeParser extends Parser
+{
     protected $parsers = [
         'bold' => [
             'pattern' => '/\[b\](.*?)\[\/b\]/s',
@@ -109,11 +110,6 @@ final class BBCodeParser extends Parser {
             'pattern' => '/\[td\](.*?)\[\/td\]/s',
             'replace' => '<td>$1</td>',
             'content' => '$1',
-        ],
-        'linebreak' => [
-            'pattern' => '/\r\n/',
-            'replace' => '<br />',
-            'content' => '',
         ],
     ];
 

@@ -8,7 +8,8 @@
 
 namespace Genert\BBCode\Parser;
 
-final class HTMLParser extends Parser {
+final class HTMLParser extends Parser
+{
     protected $parsers = [
         'bold' => [
             'pattern' => '/<strong>(.*?)<\/strong>|<b>(.*?)<\/b>/s',

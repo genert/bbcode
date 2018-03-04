@@ -8,7 +8,8 @@
 
 namespace Genert\BBCode\Parser;
 
-class Parser {
+class Parser
+{
     /**
      * Static case insensitive flag to enable
      * case insensitivity when parsing BBCode.
