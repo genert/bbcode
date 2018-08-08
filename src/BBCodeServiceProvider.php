@@ -1,6 +1,6 @@
 <?php
 
-namespace Genert\BBCode;
+namespace Rysh\BBCode;
 
 use Illuminate\Support\ServiceProvider;
 

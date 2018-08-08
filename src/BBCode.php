@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: genertorg
- * Date: 13/07/2017
- * Time: 12:04
- */
 
-namespace Genert\BBCode;
+namespace Rysh\BBCode;
 
-use Genert\BBCode\Parser\BBCodeParser;
-use Genert\BBCode\Parser\HTMLParser;
+use Rysh\BBCode\Parser\BBCodeParser;
+use Rysh\BBCode\Parser\HTMLParser;
 
 final class BBCode
 {

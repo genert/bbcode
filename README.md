@@ -1,9 +1,9 @@
 BBCode
 ================
 
-[![Latest Version](https://img.shields.io/github/release/genert/bbcode.svg?style=flat-square)](https://github.com/Genert/bbcode/releases)
+[![Latest Version](https://img.shields.io/github/release/rysh/bbcode.svg?style=flat-square)](https://github.com/Rysh/bbcode/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://travis-ci.org/Genert/bbcode.svg?branch=master)](https://travis-ci.org/Genert/bbcode)
+[![Build Status](https://travis-ci.org/Rysh/bbcode.svg?branch=master)](https://travis-ci.org/Rysh/bbcode)
 
 > BBCode parser from or to HTML.
 
@@ -14,7 +14,7 @@ BBCode
 To get the latest version of BBCode, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require genert/bbcode
+$ composer require rysh/bbcode
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ Convert BBCode to HTML and returns parsed text as string.
 
 Example:
 ```php
-use Genert\BBCode\BBCode;
+use Rysh\BBCode\BBCode;
 
 $bbCode = new BBCode();
 
@@ -37,7 +37,7 @@ Convert HTML to BBCode and returns parsed text as string.
 
 Example:
 ```php
-use Genert\BBCode\BBCode;
+use Rysh\BBCode\BBCode;
 
 $bbCode = new BBCode();
 
@@ -58,7 +58,7 @@ Strips BBCode tags from text and returns output as string.
 
 Example:
 ```php
-use Genert\BBCode\BBCode;
+use Rysh\BBCode\BBCode;
 
 $bbCode = new BBCode();
 
@@ -71,7 +71,7 @@ Sets parser to only convert set BBCode tags.
 
 Example:
 ```php
-use Genert\BBCode\BBCode;
+use Rysh\BBCode\BBCode;
 
 $bbCode = new BBCode();
 
@@ -87,7 +87,7 @@ Sets parser to only convert all BBCode tags except listed.
 
 Example:
 ```php
-use Genert\BBCode\BBCode;
+use Rysh\BBCode\BBCode;
 
 $bbCode = new BBCode();
 
@@ -103,7 +103,7 @@ Add regex based BBCode parser to translate found pattern to desired one.
 
 Example:
 ```php
-use Genert\BBCode\BBCode;
+use Rysh\BBCode\BBCode;
 
 $bbCode = new BBCode();
 
@@ -127,11 +127,11 @@ Adds linebreak parser to BBCode parsers list to convert newlines to `<br />` in 
 
 Once BBCode is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
-* `\Genert\BBCode\BBCodeServiceProvider::class,`
+* `\Rysh\BBCode\BBCodeServiceProvider::class,`
 
 You can register facades in the `aliases` key of your `config/app.php` file if you like.
 
-* `'BBCode' => \Genert\BBCode\Facades\BBCode::class,`
+* `'BBCode' => \Rysh\BBCode\Facades\BBCode::class,`
 
 With registered facade, you can use library's functionality as following:
 ```php
@@ -157,6 +157,6 @@ Contributions are welcome. Please clearly explain the purpose of the PR and foll
 Issues can be resolved quickest if they are descriptive and include both a reduced test case and a set of steps to reproduce.
 
 ## Licence
-The `genert/bbcode` library is copyright © [Genert Org](http://genert.org) and licensed for use under the MIT License (MIT).
+The `rysh/bbcode` library is copyright © [Genert Org](http://rysh.org) and licensed for use under the MIT License (MIT).
 
 Please see [MIT License](LICENSE) for more information.

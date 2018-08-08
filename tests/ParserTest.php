@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Genert Org
- * Date: 13/07/2017
- * Time: 13:42
- */
 
 use PHPUnit\Framework\TestCase;
-use Genert\BBCode\BBCode;
+use Rysh\BBCode\BBCode;
 
 class ParserTest extends TestCase
 {
