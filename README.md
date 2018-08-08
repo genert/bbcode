@@ -1,9 +1,9 @@
 BBCode
 ================
 
-[![Latest Version](https://img.shields.io/github/release/rysh/bbcode.svg?style=flat-square)](https://github.com/Rysh/bbcode/releases)
+[![Latest Version](https://img.shields.io/github/release/tatarysh/bbcode.svg?style=flat-square)](https://github.com/tatarysh/bbcode/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://travis-ci.org/Rysh/bbcode.svg?branch=master)](https://travis-ci.org/Rysh/bbcode)
+[![Build Status](https://travis-ci.org/tatarysh/bbcode.svg?branch=master)](https://travis-ci.org/tatarysh/bbcode)
 
 > BBCode parser from or to HTML.
 
