@@ -11,6 +11,36 @@ namespace Genert\BBCode\Parser;
 final class BBCodeParser extends Parser
 {
     protected $parsers = [
+        'h1' => [
+            'pattern' => '/\[h1\](.*?)\[\/h1\]/s',
+            'replace' => '<h1>$1</h1>',
+            'content' => '$1'
+        ],
+        'h2' => [
+            'pattern' => '/\[h2\](.*?)\[\/h2\]/s',
+            'replace' => '<h2>$1</h2>',
+            'content' => '$1'
+        ],
+        'h3' => [
+            'pattern' => '/\[h3\](.*?)\[\/h3\]/s',
+            'replace' => '<h3>$1</h3>',
+            'content' => '$1'
+        ],
+        'h4' => [
+            'pattern' => '/\[h4\](.*?)\[\/h4\]/s',
+            'replace' => '<h4>$1</h4>',
+            'content' => '$1'
+        ],
+        'h5' => [
+            'pattern' => '/\[h5\](.*?)\[\/h5\]/s',
+            'replace' => '<h5>$1</h5>',
+            'content' => '$1'
+        ],
+        'h6' => [
+            'pattern' => '/\[h6\](.*?)\[\/h6\]/s',
+            'replace' => '<h6>$1</h6>',
+            'content' => '$1'
+        ],
         'bold' => [
             'pattern' => '/\[b\](.*?)\[\/b\]/s',
             'replace' => '<b>$1</b>',
@@ -100,6 +130,11 @@ final class BBCodeParser extends Parser
             'pattern' => '/\[table\](.*?)\[\/table\]/s',
             'replace' => '<table>$1</table>',
             'content' => '$1',
+        ],
+        'table-class' => [
+            'pattern' => '/\[table class\=\"(.*?)\"\](.*?)\[\/table\]/s',
+            'replace' => '<table class="$1">$2</table>',
+            'content' => '$2',
         ],
         'table-row' => [
             'pattern' => '/\[tr\](.*?)\[\/tr\]/s',
