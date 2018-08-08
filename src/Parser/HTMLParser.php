@@ -2,8 +2,15 @@
 
 namespace Rysh\BBCode\Parser;
 
+/**
+ * Class HTMLParser
+ * @package Rysh\BBCode\Parser
+ */
 final class HTMLParser extends Parser
 {
+    /**
+     * @var array
+     */
     protected $parsers = [
         'h1' => [
             'pattern' => '/<h1>(.*?)<\/h1>/s',
@@ -137,6 +144,10 @@ final class HTMLParser extends Parser
         ],
     ];
 
+    /**
+     * @param string $source
+     * @return string
+     */
     public function parse(string $source): string
     {
         foreach ($this->parsers as $name => $parser) {

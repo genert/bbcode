@@ -2,8 +2,15 @@
 
 namespace Rysh\BBCode\Parser;
 
+/**
+ * Class BBCodeParser
+ * @package Rysh\BBCode\Parser
+ */
 final class BBCodeParser extends Parser
 {
+    /**
+     * @var array
+     */
     protected $parsers = [
         'h1' => [
             'pattern' => '/\[h1\](.*?)\[\/h1\]/s',
@@ -142,6 +149,10 @@ final class BBCodeParser extends Parser
         ],
     ];
 
+    /**
+     * @param string $source
+     * @return string
+     */
     public function stripTags(string $source): string
     {
         foreach ($this->parsers as $name => $parser) {
@@ -151,6 +162,11 @@ final class BBCodeParser extends Parser
         return $source;
     }
 
+    /**
+     * @param string $source
+     * @param null $caseInsensitive
+     * @return string
+     */
     public function parse(string $source, $caseInsensitive = null): string
     {
         $caseInsensitive = $caseInsensitive === self::CASE_INSENSITIVE ? true : false;

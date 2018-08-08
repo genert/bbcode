@@ -3,6 +3,9 @@
 use PHPUnit\Framework\TestCase;
 use Rysh\BBCode\BBCode;
 
+/**
+ * Class ParserTest
+ */
 class ParserTest extends TestCase
 {
     public function testParser()
@@ -40,7 +43,8 @@ class ParserTest extends TestCase
         }
     }
 
-    public function testHtmlReturnsCorrectBBCode() {
+    public function testHtmlReturnsCorrectBBCode()
+    {
         $bbCode = new BBCode();
         $input = '
             <strong>bold</strong>
@@ -135,7 +139,8 @@ class ParserTest extends TestCase
         $this->assertEquals($output, $bbCode->convertFromHtml($input));
     }
 
-    public function testBBCodeReturnsCorrectHtml() {
+    public function testBBCodeReturnsCorrectHtml()
+    {
         $bbCode = new BBCode();
 
         $input = '
