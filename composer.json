@@ -1,5 +1,5 @@
 {
-    "name": "genert/bbcode",
+    "name": "rysh/bbcode",
     "description": "BBCode parser from or to HTML.",
     "keywords": ["bbcode", "parser", "laravel", "psr-1", "psr-2", "psr-4"],
     "type": "library",
@@ -9,18 +9,25 @@
             "name": "Genert Org",
             "email": "hi@genert.org",
             "homepage": "http://genert.org"
+        },
+        {
+            "name": "Maciej Kozłowski",
+            "email": "maciej@rysh.pl",
+            "homepage": "http://rysh.pl"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Genert\\BBCode\\": "src/"
+            "Rysh\\BBCode\\": "src/"
         }
     },
     "support": {
-        "issues": "https://github.com/Genert/bbcode/issues"
+        "issues": "https://github.com/Rysh/bbcode/issues"
     },
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "php": ">=7.1.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "^6.1"
     },

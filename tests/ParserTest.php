@@ -1,14 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Genert Org
- * Date: 13/07/2017
- * Time: 13:42
- */
 
 use PHPUnit\Framework\TestCase;
-use Genert\BBCode\BBCode;
+use Rysh\BBCode\BBCode;
 
+/**
+ * Class ParserTest
+ */
 class ParserTest extends TestCase
 {
     public function testParser()
@@ -22,6 +19,12 @@ class ParserTest extends TestCase
     {
         $bbCode = new BBCode();
         $tests = [
+            ['input' => '[h1]Yolo[/h1]', 'excepted' => '<h1>Yolo</h1>'],
+            ['input' => '[h2]Yolo[/h2]', 'excepted' => '<h2>Yolo</h2>'],
+            ['input' => '[h3]Yolo[/h3]', 'excepted' => '<h3>Yolo</h3>'],
+            ['input' => '[h4]Yolo[/h4]', 'excepted' => '<h4>Yolo</h4>'],
+            ['input' => '[h5]Yolo[/h5]', 'excepted' => '<h5>Yolo</h5>'],
+            ['input' => '[h6]Yolo[/h6]', 'excepted' => '<h6>Yolo</h6>'],
             ['input' => '[b]Yolo[/b]', 'excepted' => '<b>Yolo</b>'],
             ['input' => '[i]Yolo[/i]', 'excepted' => '<i>Yolo</i>'],
             ['input' => '[u]Yolo[/u]', 'excepted' => '<u>Yolo</u>'],
@@ -30,6 +33,7 @@ class ParserTest extends TestCase
             ['input' => '[list]Yolo[/list]', 'excepted' => '<ul>Yolo</ul>'],
             ['input' => '[img]Yolo[/img]', 'excepted' => '<img src="Yolo">'],
             ['input' => '[table]Yolo[/table]', 'excepted' => '<table>Yolo</table>'],
+            ['input' => '[table class="yolo"]Yolo[/table]', 'excepted' => '<table class="yolo">Yolo</table>'],
             ['input' => '[tr]Yolo[/tr]', 'excepted' => '<tr>Yolo</tr>'],
             ['input' => '[td]Yolo[/td]', 'excepted' => '<td>Yolo</td>'],
         ];
@@ -39,7 +43,8 @@ class ParserTest extends TestCase
         }
     }
 
-    public function testHtmlReturnsCorrectBBCode() {
+    public function testHtmlReturnsCorrectBBCode()
+    {
         $bbCode = new BBCode();
         $input = '
             <strong>bold</strong>
@@ -47,6 +52,12 @@ class ParserTest extends TestCase
             <u>underline</u>
             <s>line through</s>
             <blockquote>quote</blockquote>
+            <h1>lorem ipsum</h1>
+            <h2>lorem ipsum</h2>
+            <h3>lorem ipsum</h3>
+            <h4>lorem ipsum</h4>
+            <h5>lorem ipsum</h5>
+            <h6>lorem ipsum</h6>
             <a href="http://www.example.com">http://www.example.com</a>
             <a href="http://www.example.com">example.com</a>
             <img src="http://example.com/logo.png">
@@ -72,6 +83,12 @@ class ParserTest extends TestCase
                 <td>table 4</td>
               </tr>
             </table>
+            <table class="table other-class">
+              <tr>
+                <td>col 1</td>
+                <td>col 2</td>
+              </tr>
+            </table>
         ';
 
         $output = '
@@ -80,6 +97,12 @@ class ParserTest extends TestCase
             [u]underline[/u]
             [s]line through[/s]
             [quote]quote[/quote]
+            [h1]lorem ipsum[/h1]
+            [h2]lorem ipsum[/h2]
+            [h3]lorem ipsum[/h3]
+            [h4]lorem ipsum[/h4]
+            [h5]lorem ipsum[/h5]
+            [h6]lorem ipsum[/h6]
             [url=http://www.example.com]http://www.example.com[/url]
             [url=http://www.example.com]example.com[/url]
             [img]http://example.com/logo.png[/img]
@@ -105,12 +128,19 @@ class ParserTest extends TestCase
                 [td]table 4[/td]
               [/tr]
             [/table]
+            [table class="table other-class"]
+              [tr]
+                [td]col 1[/td]
+                [td]col 2[/td]
+              [/tr]
+            [/table]
         ';
 
         $this->assertEquals($output, $bbCode->convertFromHtml($input));
     }
 
-    public function testBBCodeReturnsCorrectHtml() {
+    public function testBBCodeReturnsCorrectHtml()
+    {
         $bbCode = new BBCode();
 
         $input = '
@@ -119,6 +149,12 @@ class ParserTest extends TestCase
             [u]underline[/u]
             [s]line through[/s]
             [quote]quote[/quote]
+            [h1]lorem ipsum[/h1]
+            [h2]lorem ipsum[/h2]
+            [h3]lorem ipsum[/h3]
+            [h4]lorem ipsum[/h4]
+            [h5]lorem ipsum[/h5]
+            [h6]lorem ipsum[/h6]
             [url=http://www.example.com]http://www.example.com[/url]
             [url=http://www.example.com]example.com[/url]
             [img]http://example.com/logo.png[/img]
@@ -142,6 +178,12 @@ class ParserTest extends TestCase
             <u>underline</u>
             <s>line through</s>
             <blockquote>quote</blockquote>
+            <h1>lorem ipsum</h1>
+            <h2>lorem ipsum</h2>
+            <h3>lorem ipsum</h3>
+            <h4>lorem ipsum</h4>
+            <h5>lorem ipsum</h5>
+            <h6>lorem ipsum</h6>
             <a href="http://www.example.com">http://www.example.com</a>
             <a href="http://www.example.com">example.com</a>
             <img src="http://example.com/logo.png">

@@ -1,10 +1,15 @@
 <?php
 
-namespace Genert\BBCode;
+namespace Rysh\BBCode;
 
 use Illuminate\Support\ServiceProvider;
 
-final class BBCodeServiceProvider extends ServiceProvider {
+/**
+ * Class BBCodeServiceProvider
+ * @package Rysh\BBCode
+ */
+final class BBCodeServiceProvider extends ServiceProvider
+{
     /**
      * Indicates if loading of the provider is deferred.
      *

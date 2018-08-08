@@ -1,16 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: genertorg
- * Date: 13/07/2017
- * Time: 15:17
- */
 
-namespace Genert\BBCode\Facades;
+namespace Rysh\BBCode\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-final class BBCode extends Facade {
+/**
+ * Class BBCode
+ * @package Rysh\BBCode\Facades
+ */
+final class BBCode extends Facade
+{
+    /**
+     * @return string
+     */
     protected static function getFacadeAccessor()
     {
         return 'bbcode';
