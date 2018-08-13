@@ -119,6 +119,11 @@ $bbCode->addParser(
 $bbCode->convertToHtml('[link target=www.yourlinkhere.com]Text to be displayed[/link].');
 ```
 
+### `addHtmlParser(string $name, string $pattern, string $replace, string $content)`
+Add HTML parser to translate pattern to desired one.
+
+See `addParser` for example code.
+
 ### `addLinebreakParser()`
 
 Adds linebreak parser to BBCode parsers list to convert newlines to `<br />` in HTML.
