@@ -4,7 +4,8 @@ namespace Genert\BBCode;
 
 use Illuminate\Support\ServiceProvider;
 
-final class BBCodeServiceProvider extends ServiceProvider {
+final class BBCodeServiceProvider extends ServiceProvider
+{
     /**
      * Indicates if loading of the provider is deferred.
      *

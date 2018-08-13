@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: genertorg
- * Date: 13/07/2017
- * Time: 12:16
- */
 
 namespace Genert\BBCode\Parser;
 
