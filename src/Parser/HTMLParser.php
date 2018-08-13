@@ -12,12 +12,22 @@ final class HTMLParser extends Parser
 {
     protected $parsers = [
         'bold' => [
-            'pattern' => '/<strong>(.*?)<\/strong>|<b>(.*?)<\/b>/s',
+            'pattern' => '/<b>(.*?)<\/b>/s',
+            'replace' => '[b]$1[/b]',
+            'content' => '$1',
+        ],
+        'strong' => [
+            'pattern' => '/<strong>(.*?)<\/strong>/s',
             'replace' => '[b]$1[/b]',
             'content' => '$1',
         ],
         'italic' => [
-            'pattern' => '/<i>(.*?)<\/i>|<em>(.*?)<\/em>/s',
+            'pattern' => '/<i>(.*?)<\/i>/s',
+            'replace' => '[i]$1[/i]',
+            'content' => '$1'
+        ],
+        'em' => [
+            'pattern' => '/<em>(.*?)<\/em>/s',
             'replace' => '[i]$1[/i]',
             'content' => '$1'
         ],
@@ -26,8 +36,13 @@ final class HTMLParser extends Parser
             'replace' => '[u]$1[/u]',
             'content' => '$1',
         ],
-        'linethrough' => [
-            'pattern' => '/<s>(.*?)<\/s>|<del>(.*?)<\/del>/s',
+        'strikethrough' => [
+            'pattern' => '/<s>(.*?)<\/s>/s',
+            'replace' => '[s]$1[/s]',
+            'content' => '$1',
+        ],
+        'del' => [
+            'pattern' => '/<del>(.*?)<\/del>/s',
             'replace' => '[s]$1[/s]',
             'content' => '$1',
         ],
