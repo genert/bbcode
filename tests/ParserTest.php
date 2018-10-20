@@ -180,7 +180,7 @@ class ParserTest extends TestCase
                 <li>Item 3</li>
             </ol>
             <code><?php echo \'Hello World\'; ?></code>
-            <iframe width="560" height="315" src="//www.youtube.com/embed/pnGJXuHDoYw" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/pnGJXuHDoYw" frameborder="0" allowfullscreen></iframe>
             <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>

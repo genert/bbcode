@@ -102,7 +102,7 @@ final class BBCodeParser extends Parser
         ],
         'youtube' => [
             'pattern' => '/\[youtube\](.*?)\[\/youtube\]/s',
-            'replace' => '<iframe width="560" height="315" src="//www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>',
+            'replace' => '<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/$1" frameborder="0" allowfullscreen></iframe>',
             'content' => '$1'
         ],
         'sub' => [

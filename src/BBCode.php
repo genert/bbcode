@@ -55,7 +55,7 @@ final class BBCode
 
         return $this;
     }
-    
+
     public function addHtmlParser(string $name, string $pattern, string $replace, string $content)
     {
         $this->htmlParser->addParser($name, $pattern, $replace, $content);
