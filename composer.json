@@ -26,5 +26,15 @@
     },
     "scripts": {
         "test": "phpunit --coverage-text"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Genert\\BBCode\\BBCodeServiceProvider"
+            ],
+            "aliases": {
+                "Invoice": "Genert\\BBCode\\Facades\\BBCode"
+            }
+        }
     }
 }

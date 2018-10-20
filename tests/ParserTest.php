@@ -319,4 +319,21 @@ class ParserTest extends TestCase
             'This[b] [/b][url=http://genert.org][b]is[/b] [i]&lt;b&gt;test&lt;/b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong[/i]&gt;&lt;[u]/stro[/u]ng&gt;[/url]'
         );
     }
+
+    public function testExistingParserOverride()
+    {
+        $bbCode = new BBCode();
+
+        $bbCode->addParser(
+            'h1',
+            '/\[h1\](.*?)\[\/h1\]/s',
+            '<h3>$1</h3>',
+            '$1'
+        );
+
+        $this->assertEquals(
+            $bbCode->convertToHtml('[h1]Testing[/h1]'),
+            '<h3>Testing</h3>'
+        );
+    }
 }

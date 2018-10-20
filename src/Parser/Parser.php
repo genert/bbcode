@@ -41,10 +41,12 @@ class Parser
 
     public function addParser(string $name, string $pattern, string $replace, string $content)
     {
-        $this->parsers[$name] = [
-            'pattern' => $pattern,
-            'replace' => $replace,
-            'content' => $content,
-        ];
+        $this->parsers = array_merge($this->parsers, [
+            $name => [
+                'pattern' => $pattern,
+                'replace' => $replace,
+                'content' => $content,
+            ],
+        ]);
     }
 }
