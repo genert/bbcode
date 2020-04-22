@@ -32,6 +32,7 @@ class ParserTest extends TestCase
             ['input' => '[code]Yolo[/code]', 'excepted' => '<code>Yolo</code>'],
             ['input' => '[list]Yolo[/list]', 'excepted' => '<ul>Yolo</ul>'],
             ['input' => '[img]Yolo[/img]', 'excepted' => '<img src="Yolo">'],
+	        ['input' => '[color=#fff]Yolo[/color]', 'excepted' => '<span style="color: #fff">Yolo</span>'],
             ['input' => '[table]Yolo[/table]', 'excepted' => '<table>Yolo</table>'],
             ['input' => '[tr]Yolo[/tr]', 'excepted' => '<tr>Yolo</tr>'],
             ['input' => '[td]Yolo[/td]', 'excepted' => '<td>Yolo</td>'],
@@ -59,6 +60,7 @@ class ParserTest extends TestCase
             <h6>lorem ipsum</h6>
             <a href="http://www.example.com">http://www.example.com</a>
             <a href="http://www.example.com">example.com</a>
+            <span style="color: #fff">lorem ipsum</span>
             <img src="http://example.com/logo.png">
             <ol>
                 <li>Item 1</li>
@@ -98,6 +100,7 @@ class ParserTest extends TestCase
             [h6]lorem ipsum[/h6]
             [url=http://www.example.com]http://www.example.com[/url]
             [url=http://www.example.com]example.com[/url]
+            [color=#fff]lorem ipsum[/color]
             [img]http://example.com/logo.png[/img]
             [list=1]
                 [*]Item 1
@@ -144,6 +147,7 @@ class ParserTest extends TestCase
             [h6]lor[h6]em i[/h6]psum[/h6]
             [url=http://www.example.com]http://www.example.com[/url]
             [url=http://www.example.com]example.com[/url]
+            [color=#fff]lorem ipsum[/color]
             [img]http://example.com/logo.png[/img]
             [list=1]
                 [*]Item 1
@@ -173,6 +177,7 @@ class ParserTest extends TestCase
             <h6>lor<h6>em i</h6>psum</h6>
             <a href="http://www.example.com">http://www.example.com</a>
             <a href="http://www.example.com">example.com</a>
+            <span style="color: #fff">lorem ipsum</span>
             <img src="http://example.com/logo.png">
             <ol>
                 <li>Item 1</li>
