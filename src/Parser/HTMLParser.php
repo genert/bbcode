@@ -95,6 +95,11 @@ final class HTMLParser extends Parser
             'replace' => '[url=$1]$2[/url]',
             'content' => '$1'
         ],
+	    'color' => [
+		    'pattern' => '/<span style="color: (.*?)">(.*?)<\/span>/s',
+		    'replace' => '[color=$1]$2[/color]',
+		    'content' => '$1'
+	    ],
         'quote' => [
             'pattern' => '/<blockquote>(.*?)<\/blockquote>/s',
             'replace' => '[quote]$1[/quote]',
