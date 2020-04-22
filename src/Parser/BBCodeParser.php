@@ -65,6 +65,11 @@ final class BBCodeParser extends Parser
             'replace' => '<a href="$1">$1</a>',
             'content' => '$1'
         ],
+	    'color' => [
+		    'pattern' => '/\[color\=(.*?)\](.*?)\[\/color\]/s',
+		    'replace' => '<span style="color: $1">$2</span>',
+		    'content' => '$2'
+	    ],
         'namedlink' => [
             'pattern' => '/\[url\=(.*?)\](.*?)\[\/url\]/s',
             'replace' => '<a href="$1">$2</a>',
