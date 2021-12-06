@@ -12,6 +12,11 @@ class Parser
 
     protected $parsers = [];
 
+    public function __construct($parsers = null)
+    {
+        $this->parsers = $parsers === null ? $this->parsers : $parsers;
+    }
+    
     protected function searchAndReplace(string $pattern, string $replace, string $source): string
     {
         while (preg_match($pattern, $source)) {

@@ -12,10 +12,10 @@ final class BBCode
 
     const CASE_SENSITIVE = 0;
 
-    public function __construct()
+    public function __construct($htmlParsers = null, $bbCodeParsers = null)
     {
-        $this->htmlParser = new HTMLParser();
-        $this->bbCodeParser = new BBCodeParser();
+        $this->htmlParser = new HTMLParser($htmlParsers);
+        $this->bbCodeParser = new BBCodeParser($bbCodeParsers);
     }
 
     public function only($only = null)
