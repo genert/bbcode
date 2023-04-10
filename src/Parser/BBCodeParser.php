@@ -1,6 +1,6 @@
 <?php
 
-namespace Genert\BBCode\Parser;
+namespace Littlecxm\BBCode\Parser;
 
 final class BBCodeParser extends Parser
 {

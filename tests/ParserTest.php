@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Genert\BBCode\BBCode;
+use Littlecxm\BBCode\BBCode;
 
 /**
  * Class ParserTest

@@ -1,6 +1,6 @@
 <?php
 
-namespace Genert\BBCode\Parser;
+namespace Littlecxm\BBCode\Parser;
 
 class Parser
 {

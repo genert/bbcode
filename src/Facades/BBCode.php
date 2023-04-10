@@ -6,7 +6,7 @@
  * Time: 15:17
  */
 
-namespace Genert\BBCode\Facades;
+namespace Littlecxm\BBCode\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

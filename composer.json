@@ -1,5 +1,5 @@
 {
-    "name": "genert/bbcode",
+    "name": "littlecxm/php-bbcode",
     "description": "BBCode parser from or to HTML.",
     "keywords": ["bbcode", "parser", "laravel", "psr-1", "psr-2", "psr-4"],
     "type": "library",
@@ -9,18 +9,25 @@
             "name": "Genert Org",
             "email": "hi@genert.org",
             "homepage": "http://genert.org"
+        },
+        {
+            "name": "cxm",
+            "email": "littlecxm@gmail.com",
+            "homepage": "https://littlecxm.me"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Genert\\BBCode\\": "src/"
+            "Littlecxm\\BBCode\\": "src/"
         }
     },
     "support": {
-        "issues": "https://github.com/Genert/bbcode/issues"
+        "issues": "https://github.com/littlecxm/php-bbcode/issues"
     },
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "laravel/framework": "^8.0|^9.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "9.5.25"
     },
@@ -30,10 +37,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Genert\\BBCode\\BBCodeServiceProvider"
+                "Littlecxm\\BBCode\\BBCodeServiceProvider"
             ],
             "aliases": {
-                "Invoice": "Genert\\BBCode\\Facades\\BBCode"
+                "Invoice": "Littlecxm\\BBCode\\Facades\\BBCode"
             }
         }
     }

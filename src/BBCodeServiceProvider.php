@@ -1,6 +1,6 @@
 <?php
 
-namespace Genert\BBCode;
+namespace Littlecxm\BBCode;
 
 use Illuminate\Support\ServiceProvider;
 

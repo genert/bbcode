@@ -1,9 +1,9 @@
 <?php
 
-namespace Genert\BBCode;
+namespace Littlecxm\BBCode;
 
-use Genert\BBCode\Parser\BBCodeParser;
-use Genert\BBCode\Parser\HTMLParser;
+use Littlecxm\BBCode\Parser\BBCodeParser;
+use Littlecxm\BBCode\Parser\HTMLParser;
 
 final class BBCode
 {
